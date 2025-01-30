@@ -50,36 +50,36 @@ O sistema deve atender aos seguintes requisitos:
     ./vendor/bin/sail up -d
     ```
 
-6. Encerrando os contêineres:
-
-    ```bash
-    ./vendor/bin/sail down
-    ```
-
-7. Gere a chave de aplicação:
+6. Gere a chave de aplicação:
 
     ```bash
     ./vendor/bin/sail artisan key:generate
     ```
 
-8. Execute as migrações:
+7. Execute as migrações:
 
     ```bash
     ./vendor/bin/sail artisan migrate
     ```
 
-9. Populando o banco de dados com os seeders:
+8. Populando o banco de dados com os seeders:
 
     ```bash
     ./vendor/bin/sail artisan db:seed
     ```
 
-10. Compilando os assets:
+9. Compilando os assets:
 
     ```bash
     npm run dev
     ```
 
-11. Acessando o projeto:
+10. Acessando o projeto:
 
     [http://localhost](http://localhost)
+
+11. Encerrando os contêineres:
+
+    ```bash
+    ./vendor/bin/sail down
+    ```
