@@ -4,27 +4,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     ProfileController,
     ProjectController,
+    SiteController,
     StatusProjectController
 };
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Rota da home do site
+Route::get('/', [SiteController::class, 'index'])->name('site.index');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-
-
+// Rotas que passam pelo middleware auth, só acessíveis após autenticação do usuário
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    Route::get('/dashboard', function() {
-    return redirect()->route('projects.index')->name('dashboard');
-    });
 
     // Recurso para rotas de projects
     Route::resource('projects', ProjectController::class);
