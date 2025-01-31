@@ -11,6 +11,7 @@
     <div class="py-12">
 
         <div class="max-w-7xl mx-auto grid sm:flex gap-4 sm:px-6 lg:px-8 pb-4">
+            <x-card-all-proj route="{{ route('projects.index') }}" status="Todos" />
             <x-card-status-pending route="{{ route('projects.pending') }}" status="Pendente" />
             <x-card-status-in-progress route="{{ route('projects.in_progress') }}" status="Em Andamento" />
             <x-card-status-completed route="{{ route('projects.completed') }}" status="Concluído" />

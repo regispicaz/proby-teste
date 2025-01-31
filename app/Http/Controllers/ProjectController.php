@@ -30,7 +30,7 @@ class ProjectController extends Controller
     {
 
         // Validação dos dados enviados pelo usuário.
-        $request->validate([
+        $validateData = $request->validate([
             'name' => 'required|max:255',
             'start_date' => 'required|date',
             'status' =>'required|in:Pendente,Em Andamento,Concluído',
@@ -38,7 +38,8 @@ class ProjectController extends Controller
 
         Project::create($request->all());
 
-        return redirect()->route('projects.index')->with('success', 'projeto criado com sucesso!');
+        flash()->option('position', 'bottom-right')->title('Sucesso')->success('Projeto cadastrado com sucesso.');
+        return redirect()->route('projects.index');
 
     }
 
@@ -71,11 +72,10 @@ class ProjectController extends Controller
             'observation' => 'nullable|string',
         ]);
 
-        // dd($validateData);
-
         $project->update($validateData);
 
-        return redirect()->route('projects.index')->with('sucess', 'Projeto atualizado com sucesso!');
+        flash()->option('position', 'bottom-right')->title('Sucesso')->success('Projeto atualizado com sucesso!.');
+        return redirect()->route('projects.index');
     }
 
     // método de deleção do projeto.
@@ -83,6 +83,7 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('projects.index')->with('success', 'Projeto deletado com sucesso!');
+        flash()->option('position', 'bottom-right')->title('Sucesso')->success('Projeto excluido com sucesso!.');
+        return redirect()->route('projects.index');
     }
 }
