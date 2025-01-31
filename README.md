@@ -113,7 +113,7 @@ O sistema deve atender aos seguintes requisitos:
 ## Detalhes do uso da aplicação:
 Página de home do Site:
 Página para mostrar as opções de login, registro ou acesso ao painel caso o usuário esteja logado.
-![alt text](readme_data/image-1.png)
+![alt text](readme_data/home.png)
 
 Página de Login:
 Página para realização do login, também possíbilita o redirecionamento para a página de registro o necessário. 
