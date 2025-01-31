@@ -68,17 +68,23 @@ O sistema deve atender aos seguintes requisitos:
     ./vendor/bin/sail artisan db:seed
     ```
 
-9. Compilando os assets:
+9. Instalando dependencias do Node:
 
     ```bash
-    npm run dev
+    ./vendor/bin/sail npm install
     ```
 
-10. Acessando o projeto:
+10. Compilando os assets:
+
+    ```bash
+    ./vendor/bin/sail npm run dev
+    ```
+
+11. Acessando o projeto:
 
     [http://localhost](http://localhost)
 
-11. Encerrando os contêineres:
+12. Encerrando os contêineres:
 
     ```bash
     ./vendor/bin/sail down
